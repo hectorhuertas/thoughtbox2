@@ -10,6 +10,7 @@ gem 'puma'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
+  gem 'capybara'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
