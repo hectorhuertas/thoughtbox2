@@ -1,6 +1,10 @@
 <nav class="navbar navbar-light">
   <a class="navbar-brand" href="#">Thougthbox</a>
     <form class="form-inline pull-xs-right">
-      <button class="btn btn-primary-outline" type="submit">Sign Out</button>
+      <% if current_user %>
+        <button class="btn btn-primary-outline" type="submit">Sign Out</button>
+      <% else %>
+        <button class="btn btn-primary-outline" type="submit">Sign In/Sign Up</button>
+      <% end %>
     </form>
 </nav>

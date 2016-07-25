@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Visitor signs up' , type: :feature do
+feature 'Visitor signs up' do
   scenario 'with valid credentials' do
     sign_up_with('email@example.com', 'password', 'password')
 
