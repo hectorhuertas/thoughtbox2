@@ -1,6 +1,11 @@
 <div class="container">
   <h1 class="display-1">Sign In</h1>
   <%= form_for :session do |f| %>
+  <% if !flash.empty? %>
+    <div class="alert alert-danger">
+      <strong>Error!</strong> <%= flash[:error] %>
+    </div>
+  <% end %>
   <fieldset class="form-group">
     <%= f.label :email %>
     <%= f.text_field :email, class:'form-control' %>

@@ -18,6 +18,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'rspec-given'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'launchy'

@@ -2,6 +2,7 @@
   <a class="navbar-brand" href="#">Thougthbox</a>
     <form class="form-inline pull-xs-right">
       <% if current_user %>
+        <p> <%= current_user.email %> </p>
         <button class="btn btn-primary-outline" type="submit">Sign Out</button>
       <% else %>
         <button class="btn btn-primary-outline" type="submit">Sign In/Sign Up</button>
