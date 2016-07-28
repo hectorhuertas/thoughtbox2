@@ -12,7 +12,9 @@ module Features
       visit login_path
       fill_in 'session[email]', with: email
       fill_in 'session[password]', with: password
-      click_on 'Sign In'
+      within '#login-form' do
+        click_on 'Sign In'
+      end
     end
   end
 end

@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="display-1">Sign In</h1>
-  <%= form_for :session do |f| %>
+  <%= form_for :session , html: { id: 'login-form' } do |f| %>
   <% if !flash.empty? %>
     <div class="alert alert-danger">
       <strong>Error!</strong> <%= flash[:error] %>
