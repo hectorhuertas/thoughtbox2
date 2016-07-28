@@ -1,32 +1,38 @@
 require 'rails_helper'
 
 feature 'Visitor signs up' do
-  scenario 'with valid credentials' do
-    sign_up_with('email@example.com', 'password', 'password')
+  Given(:user) { FactoryGirl.build(:user)}
 
-    User.count.should be 1
-    current_path.should eq root_path
-    page.should have_content 'Sign Out'
+  context 'with valid credentials' do
+    When { sign_up_with(user.email, user.password, user.password) }
+
+    Then { User.count == 1 }
+    Then { current_path == root_path }
+    Then { page.should have_content user.email }
+    And  { page.should_not have_content 'Sign In' }
   end
 
-  scenario 'with invalid email' do
-    sign_up_with('example.com', 'password', 'password')
+  context 'with invalid email' do
+    When { sign_up_with('invalid', user.password, user.password) }
 
-    User.count.should be 0
-    page.should have_content 'error'
+    Then { User.count == 0 }
+    Then { page.should have_content 'error' }
+    And  { page.should_not have_content user.email }
   end
 
-  scenario 'with empty password' do
-    sign_up_with('email@example.com', '', '')
+  context 'with empty password' do
+    When { sign_up_with(user.email, '', '') }
 
-    User.count.should be 0
-    page.should have_content 'error'
+    Then { User.count == 0 }
+    Then { page.should have_content 'error' }
+    And  { page.should_not have_content user.email }
   end
 
-  scenario 'with wrong password confirmation' do
-    sign_up_with('email@example.com', '1', '2')
+  context 'with wrong password confirmation' do
+    When { sign_up_with(user.email, user.password, 'invalid') }
 
-    User.count.should be 0
-    page.should have_content 'error'
+    Then { User.count == 0 }
+    Then { page.should have_content 'error' }
+    And  { page.should_not have_content user.email }
   end
 end
