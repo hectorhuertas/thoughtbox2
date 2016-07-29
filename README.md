@@ -2,6 +2,7 @@
 ![travis-ci](https://travis-ci.org/hectorhuertas/thoughtbox2.svg?branch=master)
 [![Code Climate](https://codeclimate.com/github/hectorhuertas/thoughtbox2/badges/gpa.svg)](https://codeclimate.com/github/hectorhuertas/thoughtbox2)
 [![Test Coverage](https://codeclimate.com/github/hectorhuertas/thoughtbox2/badges/coverage.svg)](https://codeclimate.com/github/hectorhuertas/thoughtbox2/coverage)
+[![Issue Count](https://codeclimate.com/github/hectorhuertas/thoughtbox2/badges/issue_count.svg)](https://codeclimate.com/github/hectorhuertas/thoughtbox2)
 
 Author: Hector Huertas
 

@@ -5,3 +5,5 @@ services:
  - postgresql
 before_script:
   - psql -c 'create database thoughtbox2_test;' -U postgres
+script:
+  - CODECLIMATE_REPO_TOKEN=01c3a14c2d66c60b39e4b8ad339899203a56270aaa4253cec8635fa63c4f0e42 bundle exec rake

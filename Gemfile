@@ -25,6 +25,8 @@ group :development, :test do
   gem 'launchy'
 end
 
+gem "codeclimate-test-reporter", group: :test, require: nil
+
 group :development do
   # gem 'web-console', '~> 2.0'
   # gem 'spring'
