@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.3.1"
 
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
@@ -23,6 +24,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'launchy'
 end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development do
   # gem 'web-console', '~> 2.0'
