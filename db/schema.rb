@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722213112) do
+ActiveRecord::Schema.define(version: 20160730141104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "thoughts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "quality",     default: 0
+    t.integer  "user_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "thoughts", ["user_id"], name: "index_thoughts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -23,4 +34,5 @@ ActiveRecord::Schema.define(version: 20160722213112) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "thoughts", "users"
 end

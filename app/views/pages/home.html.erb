@@ -1,1 +1,13 @@
-Home Page
+<div class="container">
+  <h1 class="display-1 text-xs-center">ThoughtBox</h1>
+  <br>
+  <ul class="list-group">
+    <% @thoughts.each do |thought| %>
+      <li class="list-group-item">
+        <span class="pull-xs-right tag tag-primary">0</span>
+        <h5 class="list-group-item-heading"><%= thought.title %></h5>
+        <p class="list-group-item-text"><%= thought.description %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
