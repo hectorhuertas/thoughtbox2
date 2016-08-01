@@ -51,3 +51,30 @@ feature 'Create thought' do
     click_on 'Create Thought'
   end
 end
+
+feature 'Update thought' do
+  Given(:user) { FactoryGirl.create(:user) }
+  Given!(:thought) { FactoryGirl.create(:thought, user: user) }
+  Given(:new_thought) { FactoryGirl.build(:thought) }
+  Given { sign_in_with(user.email, user.password) }
+
+  context 'with valid data' do
+    When { update_thought_with(new_thought.title, new_thought.description)}
+
+    Then { page.should have_content new_thought.title }
+    And  { page.should have_content new_thought.description }
+  end
+
+  context 'with invalid title' do
+    When { update_thought_with('', thought.description)}
+
+    Then { page.should have_content 'error' }
+  end
+
+  def update_thought_with(title,description)
+    click_on 'Edit Thought'
+    fill_in 'thought[title]', with: title
+    fill_in 'thought[description]', with: description
+    click_on 'Update Thought'
+  end
+end

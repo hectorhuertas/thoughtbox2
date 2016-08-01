@@ -13,6 +13,20 @@ class ThoughtsController < ApplicationController
     end
   end
 
+  def edit
+    @thought = Thought.find_by(id: params[:id])
+  end
+
+  def update
+    @thought = Thought.update(params[:id], thought_params)
+
+    if @thought.valid?
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
     def thought_params

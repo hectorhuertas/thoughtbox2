@@ -9,6 +9,7 @@
         <span class="pull-xs-right tag tag-primary">0</span>
         <h5 class="list-group-item-heading"><%= thought.title %></h5>
         <p class="list-group-item-text"><%= thought.description %></p>
+        <%= link_to 'Edit Thought', edit_thought_path(thought.id) %>
       </li>
     <% end %>
   </ul>
