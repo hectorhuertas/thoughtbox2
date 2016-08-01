@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="display-1">Add Thought</h1>
+  <%= form_for @thought do |f| %>
+  <%= render 'shared/error_messages', object: @thought %>
+    <fieldset class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= f.submit 'Create Thought', class: 'btn btn-primary'%>
+    </fieldset>
+  <% end %>
+</div>

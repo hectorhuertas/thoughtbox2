@@ -1,6 +1,8 @@
 <div class="container">
   <h1 class="display-1 text-xs-center">ThoughtBox</h1>
   <br>
+  <%= link_to 'Add Thought', new_thought_path, class:'btn btn-primary' %>
+  <br><br>
   <ul class="list-group">
     <% @thoughts.each do |thought| %>
       <li class="list-group-item">
