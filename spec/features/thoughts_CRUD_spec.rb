@@ -78,3 +78,16 @@ feature 'Update thought' do
     click_on 'Update Thought'
   end
 end
+
+feature 'Delete thought' do
+  Given(:user) { FactoryGirl.create(:user) }
+  Given!(:thought) { FactoryGirl.create(:thought, user: user) }
+  Given { sign_in_with(user.email, user.password) }
+
+  context 'deletes the thought' do
+    When { click_on 'Delete Thought'}
+
+    Then { page.should_not have_content thought.title }
+    And  { Thought.count == 0 }
+  end
+end

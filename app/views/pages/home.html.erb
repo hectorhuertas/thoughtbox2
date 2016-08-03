@@ -10,6 +10,8 @@
         <h5 class="list-group-item-heading"><%= thought.title %></h5>
         <p class="list-group-item-text"><%= thought.description %></p>
         <%= link_to 'Edit Thought', edit_thought_path(thought.id) %>
+        <br>
+        <%= link_to 'Delete Thought', thought_path(thought.id), method: 'delete' %>
       </li>
     <% end %>
   </ul>

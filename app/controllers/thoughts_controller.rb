@@ -27,6 +27,11 @@ class ThoughtsController < ApplicationController
     end
   end
 
+  def destroy
+    Thought.find_by(id: params[:id]).destroy
+    redirect_to root_path
+  end
+
   private
 
     def thought_params
