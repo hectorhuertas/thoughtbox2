@@ -26,6 +26,7 @@ group :development, :test do
 end
 
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'simplecov', :require => false, :group => :test
 
 group :development do
   # gem 'web-console', '~> 2.0'
