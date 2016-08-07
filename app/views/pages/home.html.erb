@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-6">
       <p class="text-muted">React version</p>
-      <%= react_component('ThoughtBox', name: @thoughts.to_json) %>
+      <%= react_component('ThoughtBox', thoughts: @thoughts) %>
     </div>
     <div class="col-xs-6">
       <p class="text-muted">jQuery version</p>

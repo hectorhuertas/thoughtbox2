@@ -1,6 +1,6 @@
 var ThoughtBox = React.createClass({
   propTypes: {
-    name: React.PropTypes.string
+    thoughts: React.PropTypes.array.isRequired
   },
   render : function () {
     return (
@@ -11,8 +11,7 @@ var ThoughtBox = React.createClass({
         <br></br><br></br>
         <Filter></Filter>
         <br></br>
-        <ThoughtList thoughts={this.props.name}></ThoughtList>
-        {/*<ThoughtList thoughts={[JSON.parse(this.props.name)]}></ThoughtList>*/}
+        <ThoughtList thoughts={this.props.thoughts}></ThoughtList>
       </div>
     );
   }
