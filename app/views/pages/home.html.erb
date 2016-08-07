@@ -1,20 +1,29 @@
 <div class="container">
-  <h1 class="display-1 text-xs-center">ThoughtBox</h1>
-  <br>
-  <%= link_to 'Add Thought', new_thought_path, class:'btn btn-primary' %>
-  <br><br>
-  <input id="filter" type="text_field" name="filter" class="form-control" placeholder="Enter filter term...">
-  <br>
-  <ul class="list-group">
-    <% @thoughts.each do |thought| %>
-      <li class="list-group-item">
-        <span class="pull-xs-right tag tag-primary">0</span>
-        <h5 class="thought-title list-group-item-heading"><%= thought.title %></h5>
-        <p class="thought-description list-group-item-text"><%= thought.description %></p>
-        <%= link_to 'Edit Thought', edit_thought_path(thought.id) %>
-        <br>
-        <%= link_to 'Delete Thought', thought_path(thought.id), method: 'delete' %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="row">
+    <div class="col-xs-6">
+      <p class="text-muted">React version</p>
+      <%= react_component('ThoughtBox', name: @thoughts.to_json) %>
+    </div>
+    <div class="col-xs-6">
+      <p class="text-muted">jQuery version</p>
+      <h1 class="display-1 text-xs-center">ThoughtBox</h1>
+      <br>
+      <%= link_to 'Add Thought', new_thought_path, class:'btn btn-primary' %>
+      <br><br>
+      <input id="filter" type="text_field" name="filter" class="form-control" placeholder="Enter filter term...">
+      <br>
+      <ul class="list-group">
+        <% @thoughts.each do |thought| %>
+        <li class="list-group-item">
+          <span class="pull-xs-right tag tag-primary">0</span>
+          <h5 class="thought-title list-group-item-heading"><%= thought.title %></h5>
+          <p class="thought-description list-group-item-text"><%= thought.description %></p>
+          <%= link_to 'Edit Thought', edit_thought_path(thought.id) %>
+          <br>
+          <%= link_to 'Delete Thought', thought_path(thought.id), method: 'delete' %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
