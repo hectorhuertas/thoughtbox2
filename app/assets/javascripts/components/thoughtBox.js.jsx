@@ -6,8 +6,13 @@ var ThoughtBox = React.createClass({
     return (
       <div>
         <h1 className='display-1'>ThoughtBox</h1>
+        <br></br>
+        <ThoughtCreator></ThoughtCreator>
+        <br></br><br></br>
         <Filter></Filter>
-        <p>Probando {this.props.name}</p>
+        <br></br>
+        <ThoughtList thoughts={this.props.name}></ThoughtList>
+        {/*<ThoughtList thoughts={[JSON.parse(this.props.name)]}></ThoughtList>*/}
       </div>
     );
   }
