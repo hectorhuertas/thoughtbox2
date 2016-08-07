@@ -2,6 +2,12 @@ var ThoughtBox = React.createClass({
   propTypes: {
     thoughts: React.PropTypes.array.isRequired
   },
+  getInitialState: () => {
+    return { filterText: ''};
+  },
+  handleUserInput: function (newFilterText) {
+    this.setState({filterText: newFilterText});
+  },
   render : function () {
     return (
       <div>
@@ -9,9 +15,9 @@ var ThoughtBox = React.createClass({
         <br></br>
         <ThoughtCreator></ThoughtCreator>
         <br></br><br></br>
-        <Filter></Filter>
+        <Filter filterText={this.state.filterText} onUserInput={this.handleUserInput}></Filter>
         <br></br>
-        <ThoughtList thoughts={this.props.thoughts}></ThoughtList>
+        <ThoughtList thoughts={this.props.thoughts} filterText={this.state.filterText}></ThoughtList>
       </div>
     );
   }
