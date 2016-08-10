@@ -41,6 +41,10 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.6)
       execjs
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.11)
     bootstrap (4.0.0.alpha3)
       autoprefixer-rails (>= 6.0.3)
@@ -56,7 +60,9 @@ GEM
     codeclimate-test-reporter (0.6.0)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.1)
+    coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    connection_pool (2.2.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -133,6 +139,13 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.2.2)
+    react-rails (1.8.1)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -207,6 +220,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.6)
   rails-assets-tether (>= 1.1.0)!
+  react-rails
   rspec-given
   rspec-rails
   sass-rails (~> 5.0)

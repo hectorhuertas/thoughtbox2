@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'puma'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'react-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
